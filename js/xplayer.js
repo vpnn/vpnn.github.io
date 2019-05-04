@@ -23,6 +23,24 @@ url=https://www.iqiyi.com/v_19rsjpato8.html
      var G_url=GET_p("url");
      var wd=GET_p("wd");
      var v=GET_p("v");
+     var flag=GET_p("flag");
+     var playurl=String(location.search);//获取?后面的所有字串符
+/*console.log("playurl的内容："+playurl);
+//location.search
+var params = (function oneValues() {
+    var query = location.search.substr(1)
+    query = query.split('&')
+    var params = {}
+    for (let i = 0; i < query.length; i++) {
+        let q = query[i].split('=')
+        if (q.length === 2) {
+            params[q[0]] = q[1]
+        }
+    }
+    return params  //返回?号后面的参数名与参数值的数组
+
+}());
+console.log("params的内容："+params);*/
 
 /*获取网址链接上的参数结束-------*/
 //定义api---

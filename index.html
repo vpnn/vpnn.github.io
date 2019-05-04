@@ -31,28 +31,34 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="./js/xplayer.js"></script>
 <script>
 //updateInfo('?v='+v)
-upInfo(wd,G_url,v);
+console.log("location.search内容："+playurl);
+upInfo(wd,G_url,v,flag,playurl);
 console.log("参数v1内容："+v);
 console.log("参数wd1内容："+wd);
 console.log("参数G_url1内容："+G_url);
-function upInfo(namewd,nameurl,namev) {
+function upInfo(namewd,nameurl,namev,nameflag,nameplayurl) {
+       var zcf='./yunso.x.html'
+       var zcs='./play/'
        var wd=namewd;
        var G_url=nameurl;
        var v=namev;
+       var flag=nameflag;
+       var playurl=nameplayurl
 console.log("参数v2内容："+v);
 console.log("参数wd2内容："+wd);
 console.log("参数G_url2内容："+G_url);
-if(wd==="" && G_url==="" && v===""){
-      updateInfo("");
-}else{  if(v!==""){updateInfo('?v='+namev);}
-      if(wd!==""){ updateInfo('?wd='+namewd); }
-      if(G_url!==""){ updateInfo('?url='+nameurl); }
+if(wd==="" && G_url==="" && v==="" && flag===""){
+      updateInfo(zcf);
+}else{  if(v!==""){updateInfo(zcf+'?v='+namev);}
+      if(flag!==""){ updateInfo(zcs+nameplayurl); }
+      if(wd!==""){ updateInfo(zcf+'?wd='+namewd); }
+      if(G_url!==""){ updateInfo(zcf+'?url='+nameplayurl); }
     }
   }
 
 function updateInfo(name) {
 
-var sdurl='./yunso.x.html'+name;//+'?'+name+'='+name;
+var sdurl=name;//+'?'+name+'='+name;
 
  var body = document.getElementsByTagName('body');       
             document.body.innerHTML += '<iframe width="100%" height="100%" src='+sdurl+' frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"  mozallowfullscreen="mozallowfullscreen"  msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" ></iframe>';}
@@ -84,6 +90,36 @@ var sdurl='./yunso.x.html'+name;//+'?'+name+'='+name;
 <br>
 <font face="verdana" style="color:#50b2c8;">解析支持：优酷、爱奇艺、腾讯、芒果、乐视、搜狐、MP4、M3U8、FLV等等</font><br><br>
 */           
- </script>       
+ </script>
+<script type="text/javascript">
+function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for ( var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+var Request=undefined;
+Request=GetRequest();
+var id=Request["flag"];
+//?flag=1&type=zuidam3u8&id=53994&wd=双世宠妃2
+
+ function getQuery(){
+          let res = {},query=window.location.href.split(/\?(?!.*\?)/)[1];
+          if(query){
+            let arr =query.split("&");
+            for(let i = 0, len = arr.length; i < len; i++){
+              res[arr[i].split("=")[0]] = arr[i].split("=")[1]
+            }
+          }
+          return res;
+    }
+   console.log(getQuery());//var obj1 = eval(ids);
+</script>     
 </body>
 </html>
