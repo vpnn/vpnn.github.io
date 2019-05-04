@@ -219,7 +219,8 @@ xie(v);
 		  {
 		     var href="./?flag=" + v[i].flag+"&type=" +v[i].type + "&id=" + v[i].id + "&wd=" +v[i].title;
                      var title=removeHTMLTag(decodeURIComponent(v[i].title),true)+"(" +(v[i].from)+")";
-		     w+= "<a  class='list_btn' target='_parent' href='" +href +"' title='"+ title+"' ><strong>" + title + "</strong></a>";
+                     //var titleg="正在播放  ["+removeHTMLTag(decodeURIComponent(v[i].title),true)+"  ]"+" "+'part - '+"(" +(v[i].from)+")";
+		     w+= "<a  class='list_btn' target='_parent' href='" +href +"' title='"+ title+"' onclick='Wetxt(this)'><strong>" + title + "</strong></a>";
                   }
              w+=  "</div><div id='m1907pid'>";
              $("#main").html(w);
@@ -307,4 +308,17 @@ onmouseover	鼠标移到某元素之上。
  			//让下拉提示框消失
  			
  			div.parentNode.style.display="none";
+ 		}
+                function Wetxt(div){
+ 			//将div中的值赋给文本框
+ 			//document.getElementById(div).value=div.innerHTML;
+ 			
+ 			//让下拉提示框消失
+ 			//var adom = $('#div');//根据标签的id获取标签a的dom节点，jquery方式
+                       // var title = adom.attr('title');//获取title内容
+ 			var obj=document.getElementById(div);
+                        var mytitle=obj.title;
+                        var cvb="正在播放  [ "+mytitle+" ]"+" "+"part - 极源解析---XyPlayer 智能解析 X3 "
+                        $("#info").html(cvb);
+                        console.log("cvb   1："+cvb);
  		}
