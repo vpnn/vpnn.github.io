@@ -18,8 +18,8 @@ padding: 0;
 </style>
 </head>
 <body>
-<iframe width="100%" height="100%" src="//x3.nohacks.cn/so.php" frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"  mozallowfullscreen="mozallowfullscreen"  msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" ></iframe>
- <script> 
+
+ <script>
 var _hmt = _hmt || [];
    (function() {
     var hm = document.createElement("script");
@@ -27,6 +27,63 @@ var _hmt = _hmt || [];
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm,s);
 })();
-</script>       
+</script>
+<script type="text/javascript" src="./js/xplayer.js"></script>
+<script>
+//updateInfo('?v='+v)
+upInfo(wd,G_url,v);
+console.log("参数v1内容："+v);
+console.log("参数wd1内容："+wd);
+console.log("参数G_url1内容："+G_url);
+function upInfo(namewd,nameurl,namev) {
+       var wd=namewd;
+       var G_url=nameurl;
+       var v=namev;
+console.log("参数v2内容："+v);
+console.log("参数wd2内容："+wd);
+console.log("参数G_url2内容："+G_url);
+if(wd==="" && G_url==="" && v===""){
+      updateInfo("");
+}else{  if(v!==""){updateInfo('?v='+namev);}
+      if(wd!==""){ updateInfo('?wd='+namewd); }
+      if(G_url!==""){ updateInfo('?url='+nameurl); }
+    }
+  }
+
+function updateInfo(name) {
+
+var sdurl='./yunso.x.html'+name;//+'?'+name+'='+name;
+
+ var body = document.getElementsByTagName('body');       
+            document.body.innerHTML += '<iframe width="100%" height="100%" src='+sdurl+' frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"  mozallowfullscreen="mozallowfullscreen"  msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" ></iframe>';}
+ /*
+<div id="clock" style="position: static; left: 8.5px;">
+<div id="main"></div>
+<div class="clearfloat"></div>
+<p class="date"></p>
+<p class="time" id="time">12:11:02</p>
+<p class="text" id="text">2019-04-30 星期二</p><br>
+<div class="search bar6">
+<form action="./" method="get">
+<input id="wd" type="text" name="v" placeholder="请输入视频链接或名称" autocomplete="off"  onmouseover = "func(word)"  onmouseout = "func1(word)">
+<button type="submit" id="btn"></button>
+<!--<input type="submit" value="百度一下" id="btn">-->
+<div id="word"   onmouseover = "func(this)"  onmouseout = "func1(this)" style="display: none;"></div>
+</form>
+ <div class="resou">
+    <font face="verdana" style="color:#50b2c8;"> 热门搜索：</font>
+        <a href="./?v=飞驰人生">飞驰人生</a>
+       <a href="./?v=流浪地球">流浪地球</a>
+       <a href="./?v=绿皮书">绿皮书</a>
+       <a href="./?v=疯狂的外星人">疯狂的外星人</a>
+   
+ </div> 
+    
+    
+<div>    
+<br>
+<font face="verdana" style="color:#50b2c8;">解析支持：优酷、爱奇艺、腾讯、芒果、乐视、搜狐、MP4、M3U8、FLV等等</font><br><br>
+*/           
+ </script>       
 </body>
 </html>
