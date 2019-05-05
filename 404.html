@@ -172,15 +172,86 @@ h4{color:blue;font-size:50px}
 <div class="search bar6">
 <form action="index.html" method="get">
  <input id="wd" type="text" name="wd" placeholder="请输入关键词" autocomplete="off">
- <button type="submit"></button> 
- <div id="word"></div>
- </form></div>
+  <button  type="button" onclick='Wrtxt(wd)'></button><!--type="submit"-->
+<p id="pf"><p id="d" style="color: #4F4F4F;"></p></p>
 <div id="footer" class="footer"> 
 <br>免责声明:本页所有视频均收集于互联网，版权归原创者所有<br>
+<br>站长联系：邮箱:eagie88@163.com<br>
 </div>
+ <div id="word"></div>
+ </form></div>
+
 </form>
 </center>
-<script type="text/javascript" src="./js/xplayer.js"></script>
+<script>
+//var vurl=kd();
+//console.log("vurl："+vurl);
+$(function kd(){
+var kurl=$("#wd").keyup(function(e){
+var kd = $("#wd").val();
+var url='index.html?wd='+kd;
+return
+ url;
+console.log("url："+url);
+});
+return
+ kurl;
+console.log("kurl："+kurl);
+});
+
+
+
+ 	function Wrtxt(div){
+ 			//将input中的值赋给变量
+ 			//var dtxt=div.innerHTML;
+                         var kd = $("#wd").val();
+ 			//return
+
+                     var url='index.html?wd='+kd;
+                     console.log("url  cs："+url);
+              if(kd!==""){ tiaozhuan(url); }else{
+                         var str='不能为空,请输入关键词';
+                         document.getElementById("pf").innerHTML = str; }
+                 
+ 		}
+function tiaozhuan(name){
+document.location.href=name
+}
+</script>
+<script type="text/JavaScript">
+function out(obj,turl){
+var i=obj;
+if(i==0)
+document.location.href=turl;
+document.getElementById("goto").innerHTML=i;
+i--;
+setTimeout("out("+i+")",1000);
+}
+</script>
+
+    <script>
+      window.onload = function(){
+      var mm = 0;
+      var ss = 0;
+      var str = '';
+      var timer = setInterval(function(){
+      str = "";
+      if(++ss==60)
+      {
+      if(++mm==60)
+      {
+      mm=0;
+      }
+      ss=0;
+      }
+      str+=mm<10?"0"+mm:mm;
+      str+=":";
+      str+=ss<10?"0"+ss:ss;
+      document.getElementById("d").innerHTML = str;
+      },1000);
+      };
+    </script>
+
 </body>
 </html>
 <script type="text/javascript"  src="./js/yun.js" ></script>
