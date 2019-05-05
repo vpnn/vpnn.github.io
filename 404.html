@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ch-cn">
-<head>
+<head id="Head1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-language" content="zh-CN"/>
 <meta http-equiv="pragma" content="no-cache"/>
@@ -16,7 +16,10 @@
 	<script type="text/javascript" src="./include/jquery.min.js"></script>
   <script type="text/javascript"  src="./include/class.min.js" ></script>
     <link href="./include/jquery.autocomplete.css" rel="stylesheet">
-<script type="text/javascript" src="./include/jquery.autocomplete.js"></script> 
+<script type="text/javascript" src="./include/jquery.autocomplete.js"></script>
+ 
+<link href="Images/web.css?v20150217" rel="stylesheet" />
+
 <title>404，资源未找到</title>
 <body>
 <style type="text/css">
@@ -94,14 +97,14 @@ h4{color:blue;font-size:50px}
         }
 
 </style>
-<center>
+<!--<center>-->
 
 <div class="error-pic"></div>
 <h3 class="tj-txt">呀，非常抱歉！页面飞到外太空啦</h3>
 <p style="color: #4F4F4F;">您查找的资源不存在或已被删除,也许您可以搜索资源 或<a href="./" target="_top" style="text-decoration: none;margin:0 5px;">跳到首页</a></p>
 
  <div class="search bar6">
-<form action="index.php" method="get">
+<form action="index.html" method="get">
  <input id="wd" type="text" name="wd"  placeholder="请输入关键词" >
  <button type="submit"></button> 
  <div id="word" ></div>
@@ -114,8 +117,48 @@ h4{color:blue;font-size:50px}
 
 </div>
 
-</center>
+<!--</center>-->
 </body>
-<html>
+</html>
+<script type="text/javascript"  src="./js/yun.js" ></script>
+<script id="vs" type="x-shader/x-vertex">
 
+			varying vec2 vUv;
 
+			void main() {
+
+				vUv = uv;
+
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+			}
+
+    </script>
+<script id="fs" type="x-shader/x-fragment">
+
+			uniform sampler2D map;
+
+			uniform vec3 fogColor;
+
+			uniform float fogNear;
+
+			uniform float fogFar;
+
+			varying vec2 vUv;
+
+			void main() {
+
+				float depth = gl_FragCoord.z / gl_FragCoord.w;
+
+				float fogFactor = smoothstep( fogNear, fogFar, depth );
+
+				gl_FragColor = texture2D( map, vUv );
+
+				gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
+
+				gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+
+			}
+
+    </script>
+<script type="text/javascript"  src="./js/yuncd.js" ></script>
