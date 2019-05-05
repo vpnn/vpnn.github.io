@@ -24,13 +24,13 @@
 <body>
 <style type="text/css">
 
-html,body{
+/*html,body{
 background: #FFF;
 overflow-y:auto;
 overflow-x:hidden;
 width:100%;
 height: 100%; 
-}
+}*/
 .error-pic {
     height: 248px;
     background: url(./source/images/errpic.png) center no-repeat;
@@ -87,7 +87,8 @@ h4{color:blue;font-size:50px}
             background:#FF0000;
             border-radius: 0 5px 5px 0;
             width: 60px;
-            top: 0;
+            /*top: 0;*/
+            top:367px;
             right: 0;
         }
         .bar6 button:before {
@@ -97,27 +98,22 @@ h4{color:blue;font-size:50px}
         }
 
 </style>
-<!--<center>-->
-
+<center>
+<form method="post" action="" id="form1"><!--method="post" action="" id="form1"-->
 <div class="error-pic"></div>
 <h3 class="tj-txt">呀，非常抱歉！页面飞到外太空啦</h3>
 <p style="color: #4F4F4F;">您查找的资源不存在或已被删除,也许您可以搜索资源 或<a href="./" target="_top" style="text-decoration: none;margin:0 5px;">跳到首页</a></p>
-
- <div class="search bar6">
+<div class="search bar6">
 <form action="index.html" method="get">
- <input id="wd" type="text" name="wd"  placeholder="请输入关键词" >
+ <input id="wd" type="text" name="wd" placeholder="请输入关键词" autocomplete="off">
  <button type="submit"></button> 
- <div id="word" ></div>
- </div>
-</form>
-
-
-<div id="footer" class="footer" > 
+ <div id="word"></div>
+ </form></div>
+<div id="footer" class="footer"> 
 <br>免责声明:本页所有视频均收集于互联网，版权归原创者所有<br>
-
 </div>
-
-<!--</center>-->
+</form>
+</center>
 </body>
 </html>
 <script type="text/javascript"  src="./js/yun.js" ></script>
