@@ -4,6 +4,8 @@ api:https://z1.m1907.cn/api/v/?z=e090d9a71dfabaeefd49ff1c6afcdfae&jx=倚天屠�
 
 https://x3.nohacks.cn/api.php?wd=双世宠妃&cb=jQuery182006642764003872625_1556966252154&_=1556966252894
 
+https://parse.xymov.net/api.php?wd=双世宠妃&cb=jQuery182006642764003872625_1556966252154&_=1556966252894
+
 https://x3.nohacks.cn/api.php?tp=getparm&cb=jQuery182006642764003872625_1556966252154&_=1556966252226
 parameter(参数)
 下面定义获取参数函数名：Get_p
@@ -24,6 +26,8 @@ url=https://www.iqiyi.com/v_19rsjpato8.html
      var wd=GET_p("wd");
      var v=GET_p("v");
      var flag=GET_p("flag");
+     var m3u8=GET_p("m3u8");
+     var mp4=GET_p("mp4");
      var playurl=String(location.search);//获取?后面的所有字串符
 /*console.log("playurl的内容："+playurl);
 //location.search
@@ -95,7 +99,7 @@ pb(myMother.api);
           if(name!==name){
             console.log("视频名称不等："+name);
                            }
-             var url = 'https://x3.nohacks.cn/api.php?wd='+name;//+'&cb=jQuery1820032595482234962336_1554377621309&_=1554377621789'
+             var url = 'https://parse.xymov.net/api.php?wd='+name;//+'&cb=jQuery1820032595482234962336_1554377621309&_=1554377621789'
             this.m1907url=this.m1907url+name
             console.log("this.m1907url："+this.m1907url);
                  querySUG(url,id);
