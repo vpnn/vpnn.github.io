@@ -1,1 +1,1 @@
-﻿document.write('<script type="text/javascript" src="Images/cloud.js"></script>');
+﻿document.write('<script type="text/javascript" src="https://vpnn.github.io/Images/cloud.js"></script>');
